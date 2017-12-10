@@ -1,0 +1,18 @@
+<div class="container">
+  <table class="table">
+    <thead class="thead-light">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Rating</th>
+      <th scope="col">Name</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let player of watchedPlayers; let i = index">
+      <th scope="row">{{i+1}}</th>
+      <td>{{player.rating}}</td>
+      <td>{{player.name}}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>

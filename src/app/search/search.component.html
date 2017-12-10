@@ -1,0 +1,27 @@
+<div class="container player-search">
+  <form [formGroup]="playerForm" (ngSubmit)="onSubmit()">
+    <div class="row">
+      <div class="col-lg-6 offset-3">
+        <div class="input-group">
+          <input type="text" class="form-control" placeholder="Search for..." aria-label="Search for..."
+                 formControlName="playerName">
+          <span class="input-group-btn">
+        <button class="btn btn-secondary" type="submit">Search</button>
+      </span>
+        </div>
+      </div>
+    </div>
+  </form>
+
+  <div class="row player-cards">
+    <div class="col-lg-3 col-md-4 col-sm-6" *ngFor="let player of players">
+      <div class="card">
+        <img class="card-img-top player-img" [src]="'https://cdn.futbin.com/content/fifa18/img/players/' + player.baseId + '.png'">
+        <div class="card-body">
+          <h4 class="card-title">{{player.rating}} {{player.name}}</h4>
+          <button type="button" class="btn btn-primary" (click)="onAddPlayer(player)">Add to watchlist</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
